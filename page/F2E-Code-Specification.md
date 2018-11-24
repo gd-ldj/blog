@@ -147,6 +147,29 @@
   Your brower does not support the audio tag.
 ```
 
+### 资源加载
++ http或https一般不要写死，写成根据当前域名的协议去加载；
++ https的网站加载http的资源，会有问题；
+```
+<img src=”//static.chimeroi.com/hello-world.jpg”>
+```
+
+### 特殊符号
++ 不要直接把Unicode的特殊符号直接拷到html文档里面，要使用它对应的实体Entity；
++ 不要从UI里面直接拷一个unicode的字符过去，如果直接拷过去会比较丑，它取的是用的字体里面的符号；
+```
+<!-- bad -->
+<span>
+    &
+</span>
+
+<!-- good -->
+<span>
+    &amp；
+</span>
+
+```
+
 ### 注释规约
 + 对于html代码中建议超过10行的页面模块进行注释，以降低开发人员的嵌套成本与后期维护成本；
 + 由于HTML代码一般不会经过预处理，处于安全考虑，html代码中不能出现任何关于业务相关敏感信息的注释；
@@ -157,9 +180,61 @@
 </div>
 <!-- sample end -->
 ```
+### 初始化HTML模板
++ 标准版
+```
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>HTML5标准模版</title>
+</head>
+<body>
+	
+</body>
+</html>
+```
++ PC端
+```
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="your keywords">
+<meta name="description" content="your description">
+<meta name="author" content="author,email address">
+<meta name="robots" content="index,follow">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="ie-stand">
+<title>PC端HTML模版</title>
+<link rel="stylesheet" href="css/index.css" >
+</head>
+<body>
 
+<script src="example.js"></script>
+</body>
+</html>
+```
++ 移动端
+```
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" >
+<meta name="format-detection" content="telephone=no" >
+<title>移动端HTML模版</title>
+<link rel="stylesheet" href="css/index.css" >
+</head>
+<body>
+
+<script src="example.js"></script>
+</body>
+</html>
+```
 ### 参考资料
  + 内部资料不便透露
+ + [http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh](http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh) 
  + [https://www.w3cschool.cn/wematy/p2acvozt.html](https://www.w3cschool.cn/wematy/p2acvozt.html)
  + [https://juejin.im/post/599ececb5188252423583c27](https://juejin.im/post/599ececb5188252423583c27)
  + [https://guide.aotu.io/docs/html/code.html](https://guide.aotu.io/docs/html/code.html)
