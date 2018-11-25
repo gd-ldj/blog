@@ -25,11 +25,12 @@ var obj = {
  ```
  // bad
 if (condition){
- ...
+  ...
 }
 
 // good
 if (condition) {
+  ...
 }
 
  // bad
@@ -42,15 +43,16 @@ cat.set('attr', {
   age: '1'
 })
  ```
-  + if / else / for / while / function / switch / do / try / catch / finally 关键字后，必须有一个空格。
+   + if / else / for / while / function / switch / do / try / catch / finally 关键字后，必须有一个空格。
  ```
  // bad
 if(condition) {
- ...
+  ...
 }
 
 // good
 if (condition) {
+  ...
 }
 
  ```
@@ -119,7 +121,7 @@ function cat(condition) {
  ...
 }
  ```
-    + 在对象创建时，属性中的 : 之后必须有空格，: 之前不允许有空格。
+   + 在对象创建时，属性中的 : 之后必须有空格，: 之前不允许有空格。
  ```
  // bad
 {
@@ -133,7 +135,7 @@ function cat(condition) {
  lenght: 2,
 }
  ```
-    + , 和 ; 前不允许有空格
+   + , 和 ; 前不允许有空格
 ```
  // bad
 callFunc(a , b) ;
@@ -141,6 +143,81 @@ callFunc(a , b) ;
 // good
 callFunc(a, b);
  ```
+ + 空行
+   + 块的开始和结束不能是空行
+ ```
+ // bad
+function cat(condition) {
+
+ console.log(condition)
+ 
+}
+
+// good
+function cat(condition) {
+ console.log(condition)
+}
+ ```
+   + 块末和新语句间插入一个空行
+ ```
+  // bad
+if(condition) {
+  return condition;
+}
+return far;
+
+// good
+if(condition) {
+  return condition;
+}
+
+return far;
+
+ // bad
+const obj = {
+  foo() {
+  },
+  baz() {
+  },
+}; 
+return obj;
+
+// good
+const obj = {
+  foo() {
+  },
+  
+  baz() {
+  },
+}; 
+
+return obj;
+ ```
+ + 换行
+  + 每个独立语句结束后必须换行， 单行最大字符数推荐100字符，过长不易阅读和维护，但是字符串和正则表达式不要换行
+  + 运算符处换行时，运算符必须在新行的行首
+```
+
+
+// bad
+if (a &&
+    b &&
+    c ||
+    d) {
+    ...
+}
+
+// good
+if (a
+    && b
+    && c
+    || d
+) {
+    ...
+}
+
+```
+### 语言特性
 
 ### 参考资料
  + [http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh](http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh) 
