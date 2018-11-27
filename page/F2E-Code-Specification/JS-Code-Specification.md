@@ -332,7 +332,7 @@ if (a
   const foo = [1, 2, 3];
   const {frist, second} = foo;
   ```
-+ 对象
+ + 对象
   + 直接使用字面量创建对象
   ```
   // bad
@@ -371,7 +371,7 @@ if (a
   };
   const key = obj['data-baz'];
   ```
-  + 函数
++ 函数
    + 不要用Function构造函数创建函数，使用new Function创建函数会像eval方法一样执行字符串，带来安全隐患
   ```
   // bad
@@ -453,7 +453,7 @@ if (a
   fun(1, 2, 3); // => [2, 3]
   
   ```
-    + 使用ES6的默认参数，当函数需要默认值时，使用默认参数语法，不要去给参数赋值。
+   + 使用ES6的默认参数，当函数需要默认值时，使用默认参数语法，不要去给参数赋值。
   ```
   // bad
   function fun(a) {
@@ -466,7 +466,7 @@ if (a
     ...
   }
   ```
-     + 有默认值的函数参数需要放到参数列表的最后，这样才能使用默认参数的便利，否则要传undefined触发参数使用默认值。
+   + 有默认值的函数参数需要放到参数列表的最后，这样才能使用默认参数的便利，否则要传undefined触发参数使用默认值。
   ```
   // bad
   function fun(a = 1, b) {
@@ -480,7 +480,7 @@ if (a
   }
   fun(2); // => 2 1
   ```
-     + 不要修改参数的值。
+   + 不要修改参数的值。
   ```
   // bad
   function fun(a) {
@@ -497,7 +497,7 @@ if (a
     }
   }
   ```
-      + 函数的参数不要过多，当参数较多时，使用对象代替参数列表。
+   + 函数的参数不要过多，当参数较多时，使用对象代替参数列表。
   ```
   // bad
   function fun(a, b, c, d, e) {
@@ -511,7 +511,7 @@ if (a
   }
   fun({a: 1, b: 2, c: 3, d: 4, e: 5});
   ```
-  ### 类
+  + 类
 ### 参考资料
  + [http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh](http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh) 
  + [https://www.w3cschool.cn/wematy/p2acvozt.html](https://www.w3cschool.cn/wematy/p2acvozt.html)
