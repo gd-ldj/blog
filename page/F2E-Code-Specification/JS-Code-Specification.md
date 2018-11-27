@@ -371,7 +371,147 @@ if (a
   };
   const key = obj['data-baz'];
   ```
-
+  + 函数
+   + 不要用Function构造函数创建函数，使用new Function创建函数会像eval方法一样执行字符串，带来安全隐患
+  ```
+  // bad
+  const fun = new Function('a', 'b', 'return a + b');
+        
+  // good
+  const fun = (a, b) => (a + b);
+  ```
+   + 使用函数表达式代替函数声明，这样可以保证函数不能在定义前被调用。
+  ```
+  // bad
+  function fun() {
+    ...
+  }
+        
+  // good
+  const fun = () => {
+    ...
+  }
+  const fun = function () {
+    ...
+  }
+  
+  ```
+   + 在非函数块if、while等中，不要使用函数声明。
+  ```
+  // bad
+  if (flag) {
+    function fun() {
+      console.log('inFun');
+    }
+  }
+  fun(); // => inFun
+        
+  // good
+  //不能在块外调用
+   if (flag) {
+    const fun = function () {
+      console.log('inFun');
+    }
+  }
+  fun(); // => fun is not defined
+  
+  //能在块外调用
+  let fun;
+   if (flag) {
+     fun = function () {
+      console.log('inFun');
+    }
+  }
+  fun(); // => inFun
+  ```
+   + 使用箭头函数代替匿名函数，箭头函数不仅解决了this的指向问题，而且语法简洁。
+  ```
+  // bad
+  [1].map(function (x) {
+    ...
+  })
+        
+  // good
+  [1].map((x) => {
+    ...
+  })
+  
+  ```
+   + 不要使用arguments对象，使用剩余参数操作符...代替。
+  ```
+  // bad
+  function fun(a) {
+    const args = Array.prototype.slice.call(arguments, fun.length);
+    console.log(args);
+  }
+  fun(1, 2, 3); // => [2, 3]
+        
+  // good
+  function fun(a, ...args) {
+    console.log(args);
+  }
+  fun(1, 2, 3); // => [2, 3]
+  
+  ```
+    + 使用ES6的默认参数，当函数需要默认值时，使用默认参数语法，不要去给参数赋值。
+  ```
+  // bad
+  function fun(a) {
+    a = a || 0;
+    ...
+  }
+        
+  // good
+  function fun(a = 0) {
+    ...
+  }
+  ```
+     + 有默认值的函数参数需要放到参数列表的最后，这样才能使用默认参数的便利，否则要传undefined触发参数使用默认值。
+  ```
+  // bad
+  function fun(a = 1, b) {
+    console.log(a, b);
+  }
+  fun(2); // => 2 undefined
+        
+  // good
+  function fun(b, a = 1) {
+    console.log(b, a);
+  }
+  fun(2); // => 2 1
+  ```
+     + 不要修改参数的值。
+  ```
+  // bad
+  function fun(a) {
+    if (!a) {
+      a = 1;
+    }
+  }
+        
+  // good
+  function fun(obj) {
+    let b = a;
+    if (!a) {
+      b = 1
+    }
+  }
+  ```
+      + 函数的参数不要过多，当参数较多时，使用对象代替参数列表。
+  ```
+  // bad
+  function fun(a, b, c, d, e) {
+    ...
+  }
+  fun(1, 2, 3, 4, 5);
+        
+  // good
+  function fun({a, b, c, d, e}) {
+    ...
+  }
+  fun({a: 1, b: 2, c: 3, d: 4, e: 5});
+  ```
+  ### 类
 ### 参考资料
  + [http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh](http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh) 
  + [https://www.w3cschool.cn/wematy/p2acvozt.html](https://www.w3cschool.cn/wematy/p2acvozt.html)
