@@ -332,7 +332,7 @@ if (a
   const foo = [1, 2, 3];
   const {frist, second} = foo;
   ```
- + 对象
++ 对象
   + 直接使用字面量创建对象
   ```
   // bad
@@ -511,7 +511,7 @@ if (a
   }
   fun({a: 1, b: 2, c: 3, d: 4, e: 5});
   ```
-  + 类
++ 类
 ### 参考资料
  + [http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh](http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh) 
  + [https://www.w3cschool.cn/wematy/p2acvozt.html](https://www.w3cschool.cn/wematy/p2acvozt.html)
