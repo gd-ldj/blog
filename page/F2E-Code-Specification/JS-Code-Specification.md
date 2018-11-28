@@ -570,7 +570,81 @@ if (a
   }
   ```
  + 模块
+  + 使用ES6的 modules的import/export
+  ```
+  // bad
+  const React = require('react');
+  module.exports = React.Component;
+        
+  // good
+   import React, { Compontent } from 'react';
+   export default Component;
+  ```
+   + import语句放到模块的最顶部，import语句会声明提升，防止异常，把他们放到模块上方；
+  ```
+  // bad
+  import foo from 'foo';
+  foo.init();
   
+  import baz from 'baz';
+  baz.init();
+        
+  // good
+  import foo from 'foo';
+  import baz from 'baz';
+  foo.init();
+  baz.init();
+  ```
+  
+  + 操作符
+    + 使用严格相等运算符，当要比较的两个值类型不同时，应该将其转换成相同类型再进行比较，不要依赖==和!=的隐式转换，
+   ```
+  // bad
+  const a = '123';
+  if (a == 123) {
+    ...
+  }
+  
+  // good
+  const a = '123';
+  if (Number(a) === 123) {
+    ...
+  }
+  ```
+   + 避免嵌套三元表达式，嵌套会降低代码的可读性
+   ```
+  // bad
+ const aa = b ? c : d === e ? f : g;
+  
+  // good
+  const bb = d === e ? f : g;
+  const aa = b ? c : bb;
+  ``` 
+   + 避免不必要的三元表达式
+   ```
+  // bad
+ const aa = a ? a : b;
+ const bb = b ? true : false;
+ const cc = c ? false : true;
+  
+  // good
+ const aa = a || b;
+ const bb = !!b;
+ const cc = !c;
+  ``` 
+   + 混合使用多种操作符，用小括号分组，能够清楚的表达代码的意图
+   ```
+  // bad - 有些人会认为先 a || b
+ if (a || b && c) {
+   ...
+ }
+  
+  // good
+ if (a || (b && c)) {
+   ...
+ }
+  ``` 
+  ### 注释
   
   
   
