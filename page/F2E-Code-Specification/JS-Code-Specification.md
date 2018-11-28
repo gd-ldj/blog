@@ -512,6 +512,68 @@ if (a
   fun({a: 1, b: 2, c: 3, d: 4, e: 5});
   ```
 + 类
+ + 不要再直接操作prototype，使用class语句声明类，用ES6的语法糖，更加简洁且易于维护
+ ```
+  // bad
+  function fun() {
+    this.age = 1;
+  }
+  fun.prototype.say = function () {
+    this.age += 1;
+  }
+        
+  // good
+  class fun() {
+    constructor() {
+      this.age = 1;
+    }
+    say() {
+      this.age += 1;
+    }
+  }
+  ```
+  + 使用extend语句进行类的继承，extends是用于原型继承的内建方法，不会破坏instanceof
+ ```
+  class sen extends far {
+    ...
+  }
+  ```
+  + 空construtor或者只调用父类的construtor是没必要的
+ ```
+  // bad
+  class far() {
+    construtor() {
+    }
+    method() {
+      ...
+    }
+  }
+  class sen extends far {
+    construtor (value) {
+      super(value);
+    }
+    method() {
+     ...
+    }
+  }
+        
+  // good
+   class far() {
+    method() {
+      ...
+    }
+  }
+  class sen extends far {
+    method() {
+     ...
+    }
+  }
+  ```
+ + 模块
+  
+  
+  
+  
 ### 参考资料
  + [http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh](http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh) 
  + [https://www.w3cschool.cn/wematy/p2acvozt.html](https://www.w3cschool.cn/wematy/p2acvozt.html)
