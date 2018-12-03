@@ -645,9 +645,60 @@ if (a
  }
   ``` 
   ### 注释
-  
-  
-  
+  > 注释的目的，提高代码的可读性
+  > 注释的原则，如无必要，请勿注释，如有必要，请必详尽
+  + 单行注释使用 //
+  + 多行注释使用 /** */，而不是多行 //
+  + 注释符要和注释内容之间留一个空格
+  + 合理的使用注释标记 // FIME    // TODO
+  ```javascript
+  /**
+  * @title
+  * @auther
+  */
+ function book() {
+   // 单行注释
+   ...
+   // TODO: 执行
+ }
+  ``` 
+ ### 命名
+ + 命名要有语义，不要使用单个字符命名
+  ```javascript
+  // bad
+ function g() {
+   ...
+ }
+ 
+  // good
+ function get() {
+   ...
+ }
+  ``` 
+   + 使用小驼峰命名对象、函数、实例
+  ```javascript
+  // bad
+ function get_data() {
+   ...
+ }
+ 
+  // good
+ function getData() {
+   ...
+ }
+  ``` 
+    + 使用大驼峰命名类和构造函数
+  ```javascript
+  // bad
+ function user() {
+   this.name = 'name';
+ }
+ 
+  // good
+ function User() {
+   this.name = 'name';
+ }
+  ``` 
 ### 参考资料
  + [http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh](http://codeguide.co/?spm=a2o8t.11089562.0.0.7a0b6654shFwrh) 
  + [https://www.w3cschool.cn/wematy/p2acvozt.html](https://www.w3cschool.cn/wematy/p2acvozt.html)
