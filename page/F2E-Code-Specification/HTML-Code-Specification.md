@@ -141,6 +141,7 @@
 <audio controls>
   <source src="..." type="...">
   Your brower does not support the audio tag.
+ </audio>
 ```
 
 ### 资源加载
