@@ -4,7 +4,7 @@
 ### 基本规约
 + 缩进, 和html缩进保持一致，2或4个空格；
 + 在每个声明块的左括号前添加一个空格
-```
+```css
 /* bad */
 .element{
   width: 20px;
@@ -16,7 +16,7 @@
 }
 ```
 + 每个声明块的右括号应单独成行
-```
+```css
 /* bad */
 .element {
   width: 20px;}
@@ -27,7 +27,7 @@
 }
 ```
 + 每条声明语句的：后应有一个空格，前没有空格
-```
+```css
 /* bad */
 .element {
   width:20px;
@@ -39,7 +39,7 @@
 }
 ```
 + 每条声明语句都应；结尾，不能省略
-```
+```css
 /* bad */
 .element {
   width: 20px
@@ -64,7 +64,7 @@
   + !important '!'前
   + @else 前后
   + 属性值中的','后
-```
+```css
 /* bad */
 .element {
     color :red! important;
@@ -128,7 +128,7 @@
 ### 命名规约
 + 类名使用小写字母，以中划线分隔
 + id采用驼峰式命名
-```
+```css
 /* bad */
 .element_box {
   width:20px;
@@ -146,7 +146,7 @@
 + 不使用通用选择器 *
 + 不使用 ID 选择器
 + 不使用无具体语义定义的标签选择器
-```
+```css
 /* bad */
 *{}
 #jdc {}
@@ -158,7 +158,7 @@
 .jdc li p{}
 ```
 + 为选择器分组时，将单独的选择器单独放在一行
-```
+```css
 /* bad */
 .element, .element-mod {
   width: 20px;}
@@ -170,7 +170,7 @@
 }
 ```
 + 为选择器中的属性添加双引号
-```
+```css
 /* bad */
 .element[type=text] {
   width: 20px
@@ -182,7 +182,7 @@
 }
 ```
 + 建议选择器的层级不要超过5级
-```
+```css
 /* bad */
 .element .top .left .conetent .dox .txt {
   width: 20px
@@ -201,7 +201,7 @@
 + 文本属性：color / font / text-decoration / text-align / vertical-align / white- space / break-word
 + 其他属性（CSS3）：content / cursor / border-radius / box-shadow / text-shadow / background:linear-gradient …
 > 定位可以从正常的文档流中移除元素，还能覆盖盒模型相关的样式，因此排在最前面，文本属性只影响元素的细节样式变化，排在下面
-```
+```css
 /* bad */
 .element {
   width: 20px;
@@ -233,7 +233,7 @@
 ```
 #### 简写形式的属性声明
 + 对于background、font的简写形式的属性声明，要么就显示声明所有的值，要么就分开写
-```
+```css
 /* bad */
 .element {
   background: url(image.pnd);
@@ -245,7 +245,7 @@
 }
 ```
 + 0 后面不加单位
-```
+```css
 /* bad */
 .element {
    width: 0px；
@@ -257,7 +257,7 @@
 }
 ```
 + 应避免16进制表示法与rgb表示法混用，优先使用16进制表示法
-```
+```css
 /* bad */
 .element {
    color: #F37327；
@@ -275,7 +275,7 @@
 }
 ```
 + 小数省略前面的 0
-```
+```css
 /* bad */
 .element {
    opacity: 0.8；
@@ -287,7 +287,7 @@
 }
 ```
 + 属性选择器或属性值用""，url()不使用引号
-```
+```css
 /* bad */
 .element {
    background-image: url("image.pnd");
@@ -300,13 +300,13 @@
 ```
 ### 注释规约
 + 模块注释
-```
+```css
 /*
  * 整个列表页样式入口文件
  */
 ```
 + 单行注释
-```
+```css
 /*注释*/
 ```
 
