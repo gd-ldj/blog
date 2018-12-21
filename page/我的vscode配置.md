@@ -1,0 +1,37 @@
+## 工欲善其事，必先利其器  
+记录下我的vscode的配置
+
+- Auto Close Tag   自动添加HTML / XML关闭标签
+- Auto Import  自动import提示
+- Auto Rename Tag   自动重命名配对的HTML / XML标签
+- Babel ES6/ES7   这个是ES6，ES7语法加亮检查插件。
+- Beautify   格式化javascript，JSON，CSS，Sass，和HTML
+- Better Comments   编写更加人性化的注释
+- Bracket Pair Colorizer 每一对括号用不同颜色区别   
+- Chinese (Simplified) Language Pack for Visual Studio Code  适用于 VS Code 的中文（简体）语言包   
+- Code Runner   快速的选中代码块然后执行
+- Color Highlight  颜色代码高亮   
+- Document This 添加注释块   
+- ESLint 是用来统一JavaScript代码风格的工具   
+- filesize 在底部状态栏显示当前文件大小，点击后还可以看到详细创建、修改时间   
+- Folder Indexing   提高文件的索引速度[常驻于内存中]，这对于项目比较大的小伙伴必须安装啊
+- Git History   显示git log和line history
+- gitk  查阅git提交历史，版本实时比对   
+- GitLens — Git supercharged       显示文件最近的 commit 和作者，显示当前行 commit 信息	
+- HTML Boilerplate   通过使用 HTML 模版插件，你就摆脱了为 HTML 新文件重新编写头部和正文标签的苦恼
+- HTML CSS Support  在编写样式表的时候，自动补全功能大大缩减了编写时间 
+- HTML Snippets   超级实用且初级的 H5代码片段以及提示
+- vscode IntelliSense for CSS class names in HTML   在工作区自动扫描css文件类名，自动提示class类名
+- jsx    react的jsx语法支持
+- Markdown Preview Enhanced   markdown文件预览插件
+- markdownlint   静态分析软件提示错误，warning。或者编写的风格问题
+- npm Intellisense  自动引入node_modules中的JS   
+- Partial Diff	   对比两段代码或文件
+- Path Intellisense 自动路劲补全  
+- AProject Manager   在多个项目之前快速切换的工具
+- Reactjs code snippets   Reactjs code snippets语法支持，快捷命令
+- stylus   stylus语法提示
+- Turbo Console Log   自动添加console.log, 快捷键 ctrl + alt + l, 注释 alt + shift + c
+- Velocity   vm模版的支持
+- View In Browser   在浏览器中打开html
+- vscode-icons   vscode的文件图标
