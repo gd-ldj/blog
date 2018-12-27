@@ -56,7 +56,7 @@
 - **vscode IntelliSense for CSS class names in HTML**   
 > _在工作区自动扫描css文件类名，自动提示class类名_
 - **jsx**    
-> _react的jsx语法支持 _
+> _react的jsx语法支持_
 - **Markdown Preview Enhanced**  
 > _markdown文件预览插件_
 - **markdownlint**   
