@@ -1,10 +1,10 @@
 ## JS-Code-Specification
 > 本规范基于ES6
 
-### 编码风格
- + 缩进, 和html缩进保持一致，2或4个空格，团队保持一致即可；
- + 分号，统一以分号结束语句，可以避免JS引擎自动插入机制的怪异行为，语义上也更加明了；
- + 逗号，对于逗号分隔的多行结构，不使用行首逗号；并且始终加上最后一个逗号, 这样可以方便快捷的添加删除；
+### 1 编码风格
+ 1.1 缩进, 和html缩进保持一致，2或4个空格，团队保持一致即可；  
+ 1.2 分号，统一以分号结束语句，可以避免JS引擎自动插入机制的怪异行为，语义上也更加明了；  
+ 1.3 逗号，对于逗号分隔的多行结构，不使用行首逗号；并且始终加上最后一个逗号, 这样可以方便快捷的添加删除；  
  ```javascript
  // bad
 var obj = {
@@ -20,8 +20,8 @@ var obj = {
     c: 3,
 };
  ```
- + 空格
-   + 块的左大括号 { 前有一个空
+ 1.4 空格  
+   1.4.1 块的左大括号 { 前有一个空  
  ```javascript
  // bad
 if (condition){
@@ -43,7 +43,7 @@ cat.set('attr', {
   age: '1'
 })
  ```
-  + if / else / for / while / function / switch / do / try / catch / finally 关键字后，必须有一个空格。
+  1.4.2 if / else / for / while / function / switch / do / try / catch / finally 关键字后，必须有一个空格。  
  ```javascript
  // bad
 if(condition) {
@@ -56,7 +56,7 @@ if (condition) {
 }
 
  ```
-  + 声明函数时，函数名和参数列表之间无空格。
+  1.4.3  声明函数时，函数名和参数列表之间无空格。  
  ```javascript
  // bad
 function cat (condition) {
@@ -69,7 +69,7 @@ function cat(condition) {
 }
 
  ```
-   + 小括号、方括号内部两侧无空格, 大括号内部两侧有空格。
+   1.4.4 小括号、方括号内部两侧无空格, 大括号内部两侧有空格。  
  ```javascript
  // bad
 function cat( condition ) {
@@ -94,7 +94,7 @@ const obj = {age: 1};
 const obj = { age: 1 };
 
  ```
-  + 除了一元运算符两侧无空格，其余运算符两侧有空格，。
+  1.4.5 除了一元运算符两侧无空格，其余运算符两侧有空格。  
  ```javascript
  // bad
 const x=y+1;
@@ -109,7 +109,7 @@ const x = ++ 1;
 // good
 const x = ++1;
  ```
-  + 声明函数时，函数名和参数列表之间无空格。
+  1.4.6  声明函数时，函数名和参数列表之间无空格。  
  ```javascript
  // bad
 function cat (condition) {
@@ -121,7 +121,7 @@ function cat(condition) {
   ...
 }
  ```
-  + 在对象创建时，属性中的 : 之后必须有空格，: 之前不允许有空格。
+  1.4.7  在对象创建时，属性中的 : 之后必须有空格，: 之前不允许有空格。  
  ```javascript
  // bad
 {
@@ -135,7 +135,7 @@ function cat(condition) {
  lenght: 2,
 }
  ```
-  + , 和 ; 前不允许有空格
+  1.4.8  , 和 ; 前不允许有空格  
 ```javascript
  // bad
 callFunc(a , b) ;
@@ -143,8 +143,8 @@ callFunc(a , b) ;
 // good
 callFunc(a, b);
  ```
- + 空行
-   + 块的开始和结束不能是空行
+ 1.5 空行  
+   1.5.1 块的开始和结束不能是空行  
  ```javascript
  // bad
 function cat(condition) {
@@ -158,7 +158,7 @@ function cat(condition) {
  console.log(condition)
 }
  ```
-   + 块末和新语句间插入一个空行
+   1.5.2 块末和新语句间插入一个空行  
  ```javascript
   // bad
 if(condition) {
@@ -193,9 +193,9 @@ const obj = {
 
 return obj;
  ```
- + 换行
-   + 每个独立语句结束后必须换行， 单行最大字符数推荐100字符，过长不易阅读和维护，但是字符串和正则表达式不要换行
-   + 运算符处换行时，运算符必须在新行的行首
+ 1.6 换行  
+   1.6.1 每个独立语句结束后必须换行， 单行最大字符数推荐100字符，过长不易阅读和维护，但是字符串和正则表达式不要换行  
+   1.6.2   运算符处换行时，运算符必须在新行的行首  
 ```javascript
 // bad
 if (a &&
@@ -215,15 +215,15 @@ if (a
 }
 
 ```
-### 语言特性
-+ 变量声明
-  + 使用const、let声明变量，尽量不再使用var
-  + 优先使用const，只有当变量会被重新赋值时才使用let
-  + 声明数组或者对象时，多数使用const，因为对数组和对象的改变并不是重新赋值
-  + 声明的变量和表达式必须被使用，声明但未被使用的变量，表达式，会给维护者造成困扰，可能会带来潜在的问题
-  + 哪里使用，哪里声明，这样易于阅读，不会存在声明提升问题
-  + const和let归类写在一起，便于阅读
-  + 一条声明语句声明一个变量，这样易于增加或者删除
+### 2 语言特性
+2.1 变量声明  
+  2.1.1  使用const、let声明变量，尽量不再使用var  
+  2.1.2   优先使用const，只有当变量会被重新赋值时才使用let  
+  2.1.3 声明数组或者对象时，多数使用const，因为对数组和对象的改变并不是重新赋值  
+  2.1.4 声明的变量和表达式必须被使用，声明但未被使用的变量，表达式，会给维护者造成困扰，可能会带来潜在的问题  
+  2.1.5 哪里使用，哪里声明，这样易于阅读，不会存在声明提升问题  
+  2.1.6 const和let归类写在一起，便于阅读  
+  2.1.7 一条声明语句声明一个变量，这样易于增加或者删除  
   ```javascript
   // bad
   const foo = 1,
@@ -233,7 +233,7 @@ if (a
   const foo = 1;
   const baz = 2;
   ```
-  + 禁止连续赋值，难以阅读和理解，还会导致意想不到的问题
+  2.1.8 禁止连续赋值，难以阅读和理解，还会导致意想不到的问题  
   ```javascript
   // bad
   let foo = baz = 2;
@@ -242,7 +242,7 @@ if (a
   let foo = 1;
   let baz = foo;
   ```
-   + 变量不要与外层作用域已存在的变量同名，如果存在变量同名，会降低可读性，也会导致内层作用域无法读取外层作用域的同名变量
+   2.1.9 变量不要与外层作用域已存在的变量同名，如果存在变量同名，会降低可读性，也会导致内层作用域无法读取外层作用域的同名变量  
   ```javascript
   // bad
   const foo = 2;
@@ -259,9 +259,9 @@ if (a
     console.log(baz) // => 1
   }
   ```
-    + 不要重复声明变量和函数，ES6中重复声明const、let会直接报错，重复声明var不会报错，也不要重复声明
- + 布尔值
-   + 类型转换使用 !!
+   2.1.10 不要重复声明变量和函数，ES6中重复声明const、let会直接报错，重复声明var不会报错，也不要重复声明  
+ 2.2 布尔值  
+   2.2.1 类型转换使用 !!  
  ```javascript
   // bad
   const foo = 0;
@@ -271,7 +271,7 @@ if (a
   const foo = 0;
   const baz = !!foo;
  ```
-   + 在if等条件语句中，将表达式的值强制转化为boolean是多余的
+   2.2.2 在if等条件语句中，将表达式的值强制转化为boolean是多余的  
    ```javascript
   // bad
   if (!!foo) {
@@ -285,8 +285,8 @@ if (a
   }
   const baz = foo ? 0 : 1;
   ```
-+ 数组
-  + 直接使用字面量创建数组，除非是构造具体长度的空数组
+2.3 数组  
+  2.3.1 直接使用字面量创建数组，除非是构造具体长度的空数组  
   ```javascript
   // bad
   const foo = Array(1, 2);
@@ -296,7 +296,7 @@ if (a
   const foo = [1, 2];
   const baz = new Array(200);
   ```
-   + 数组复制使用扩展运算符...
+   2.3.2 数组复制使用扩展运算符...  
   ```javascript
   // bad
   const foo = [1, 2];
@@ -309,7 +309,7 @@ if (a
   const foo = [1, 2];
   const baz = [...foo];
   ```
-   + 数组拼接用扩展运算符
+   2.3.3 数组拼接用扩展运算符  
   ```javascript
   // bad
   const foo = [1, 2];
@@ -319,7 +319,7 @@ if (a
   const foo = [1, 2];
   const baz = [3, ...foo];
   ```
-   + 用解构方法获取数组元素
+   2.3.4 用解构方法获取数组元素  
   ```javascript
   // bad
   const foo = [1, 2, 3];
@@ -330,8 +330,8 @@ if (a
   const foo = [1, 2, 3];
   const {frist, second} = foo;
   ```
-+ 对象
-  + 直接使用字面量创建对象
+2.4 对象  
+  2.4.1 直接使用字面量创建对象  
   ```javascript
   // bad
   const obj = new Object();
@@ -339,7 +339,7 @@ if (a
   // good
   const obj = {};
   ```
-   + 对象的属性名不要使用单引号，除非包含特殊字符
+   2.4.2 对象的属性名不要使用单引号，除非包含特殊字符  
   ```javascript
   // bad
   const obj = {
@@ -353,7 +353,7 @@ if (a
     'data-baz': 2,
   };
   ```
-   + 优先使用.访问对象的属性，可以提高代码的可读性。在访问动态属性名或包含特殊字符的属性时使用[]
+   2.4.3 优先使用.访问对象的属性，可以提高代码的可读性。在访问动态属性名或包含特殊字符的属性时使用[]  
   ```javascript
   // bad
   const obj = {
@@ -369,8 +369,8 @@ if (a
   };
   const key = obj['data-baz'];
   ```
-+ 函数
-   + 不要用Function构造函数创建函数，使用new Function创建函数会像eval方法一样执行字符串，带来安全隐患
+2.5 函数  
+   2.5.1 不要用Function构造函数创建函数，使用new Function创建函数会像eval方法一样执行字符串，带来安全隐患  
   ```javascript
   // bad
   const fun = new Function('a', 'b', 'return a + b');
@@ -378,7 +378,7 @@ if (a
   // good
   const fun = (a, b) => (a + b);
   ```
-   + 使用函数表达式代替函数声明，这样可以保证函数不能在定义前被调用。
+   2.5.2 使用函数表达式代替函数声明，这样可以保证函数不能在定义前被调用。  
   ```javascript
   // bad
   function fun() {
@@ -394,7 +394,7 @@ if (a
   }
   
   ```
-   + 在非函数块if、while等中，不要使用函数声明。
+   2.5.3 在非函数块if、while等中，不要使用函数声明。  
   ```javascript
   // bad
   if (flag) {
@@ -422,7 +422,7 @@ if (a
   }
   fun(); // => inFun
   ```
-   + 使用箭头函数代替匿名函数，箭头函数不仅解决了this的指向问题，而且语法简洁。
+   2.5.4 使用箭头函数代替匿名函数，箭头函数不仅解决了this的指向问题，而且语法简洁。  
   ```javascript
   // bad
   [1].map(function (x) {
@@ -435,7 +435,7 @@ if (a
   })
   
   ```
-   + 不要使用arguments对象，使用剩余参数操作符...代替。
+   2.5.5 不要使用arguments对象，使用剩余参数操作符...代替。  
   ```javascript
   // bad
   function fun(a) {
@@ -451,7 +451,7 @@ if (a
   fun(1, 2, 3); // => [2, 3]
   
   ```
-   + 使用ES6的默认参数，当函数需要默认值时，使用默认参数语法，不要去给参数赋值。
+   2.5.6 使用ES6的默认参数，当函数需要默认值时，使用默认参数语法，不要去给参数赋值。  
   ```javascript
   // bad
   function fun(a) {
@@ -464,7 +464,7 @@ if (a
     ...
   }
   ```
-   + 有默认值的函数参数需要放到参数列表的最后，这样才能使用默认参数的便利，否则要传undefined触发参数使用默认值。
+   2.5.7 有默认值的函数参数需要放到参数列表的最后，这样才能使用默认参数的便利，否则要传undefined触发参数使用默认值。  
   ```javascript
   // bad
   function fun(a = 1, b) {
@@ -478,7 +478,7 @@ if (a
   }
   fun(2); // => 2 1
   ```
-   + 不要修改参数的值。
+   2.5.8 不要修改参数的值。  
   ```javascript
   // bad
   function fun(a) {
@@ -495,7 +495,7 @@ if (a
     }
   }
   ```
-   + 函数的参数不要过多，当参数较多时，使用对象代替参数列表。
+   2.5.9 函数的参数不要过多，当参数较多时，使用对象代替参数列表。  
   ```javascript
   // bad
   function fun(a, b, c, d, e) {
@@ -509,8 +509,8 @@ if (a
   }
   fun({a: 1, b: 2, c: 3, d: 4, e: 5});
   ```
-+ 类
- + 不要再直接操作prototype，使用class语句声明类，用ES6的语法糖，更加简洁且易于维护
+2.6 类  
+ 2.6.1 不要再直接操作prototype，使用class语句声明类，用ES6的语法糖，更加简洁且易于维护
  ```javascript
   // bad
   function fun() {
@@ -530,13 +530,13 @@ if (a
     }
   }
   ```
-  + 使用extend语句进行类的继承，extends是用于原型继承的内建方法，不会破坏instanceof
+  2.6.2 使用extend语句进行类的继承，extends是用于原型继承的内建方法，不会破坏instanceof  
  ```javascript
   class sen extends far {
     ...
   }
   ```
-  + 空construtor或者只调用父类的construtor是没必要的
+  2.6.3 空construtor或者只调用父类的construtor是没必要的  
  ```javascript
   // bad
   class far() {
@@ -567,8 +567,8 @@ if (a
     }
   }
   ```
- + 模块
-  + 使用ES6的 modules的import/export
+ 2.7 模块  
+  2.7.1 使用ES6的 modules的import/export  
   ```javascript
   // bad
   const React = require('react');
@@ -578,7 +578,7 @@ if (a
    import React, { Compontent } from 'react';
    export default Component;
   ```
-   + import语句放到模块的最顶部，import语句会声明提升，防止异常，把他们放到模块上方；
+   2.7.2 import语句放到模块的最顶部，import语句会声明提升，防止异常，把他们放到模块上方；  
   ```javascript
   // bad
   import foo from 'foo';
@@ -594,8 +594,8 @@ if (a
   baz.init();
   ```
   
-  + 操作符
-    + 使用严格相等运算符，当要比较的两个值类型不同时，应该将其转换成相同类型再进行比较，不要依赖==和!=的隐式转换，
+  2.8 操作符  
+    2.8.1 使用严格相等运算符，当要比较的两个值类型不同时，应该将其转换成相同类型再进行比较，不要依赖==和!=的隐式转换，  
    ```javascript
   // bad
   const a = '123';
@@ -609,7 +609,7 @@ if (a
     ...
   }
   ```
-   + 避免嵌套三元表达式，嵌套会降低代码的可读性
+   2.8.2 避免嵌套三元表达式，嵌套会降低代码的可读性  
    ```javascript
   // bad
  const aa = b ? c : d === e ? f : g;
@@ -618,7 +618,7 @@ if (a
   const bb = d === e ? f : g;
   const aa = b ? c : bb;
   ``` 
-   + 避免不必要的三元表达式
+   2.8.3 避免不必要的三元表达式  
    ```javascript
   // bad
  const aa = a ? a : b;
@@ -630,7 +630,7 @@ if (a
  const bb = !!b;
  const cc = !c;
   ``` 
-   + 混合使用多种操作符，用小括号分组，能够清楚的表达代码的意图
+   2.8.4 混合使用多种操作符，用小括号分组，能够清楚的表达代码的意图  
    ```javascript
   // bad - 有些人会认为先 a || b
  if (a || b && c) {
@@ -642,13 +642,13 @@ if (a
    ...
  }
   ``` 
-  ### 注释
+  ### 3 注释
   > 注释的目的，提高代码的可读性
   > 注释的原则，如无必要，请勿注释，如有必要，请必详尽
-  + 单行注释使用 //
-  + 多行注释使用 /** */，而不是多行 //
-  + 注释符要和注释内容之间留一个空格
-  + 合理的使用注释标记 // FIME    // TODO
+  3.1 单行注释使用 //  
+  3.2 多行注释使用 /** */，而不是多行 //   
+  3.3 注释符要和注释内容之间留一个空格  
+  3.4 合理的使用注释标记 // FIME    // TODO  
   ```javascript
   /**
   * @title
@@ -660,8 +660,8 @@ if (a
    // TODO: 执行
  }
   ``` 
- ### 命名
- + 命名要有语义，不要使用单个字符命名
+ ### 4 命名
+ 4.1 命名要有语义，不要使用单个字符命名  
   ```javascript
   // bad
  function g() {
@@ -673,7 +673,7 @@ if (a
    ...
  }
   ``` 
-   + 使用小驼峰命名对象、函数、实例
+   4.2 使用小驼峰命名对象、函数、实例  
   ```javascript
   // bad
  function get_data() {
@@ -685,7 +685,7 @@ if (a
    ...
  }
   ``` 
-    + 使用大驼峰命名类和构造函数
+  4.3 使用大驼峰命名类和构造函数  
   ```javascript
   // bad
  function user() {
