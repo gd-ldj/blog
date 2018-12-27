@@ -1,13 +1,13 @@
 ## 工欲善其事，必先利其器  
 
-程序员离不开的是IDE，本人最常用的是Visual Studio Code  :smile:   
+### 程序员离不开的是IDE，本人最常用的是Visual Studio Code  :smile:   
 
 换了电脑后，对新IDE进行重新配置以及安装插件是非常繁琐的，教你移植VSCode配置的方法
 + 这里使用的是VSCode的同步插件 **"Settings Sync"** 
 + 首先VSCode都要安装插件 Settings Sync
 + 使用github配合，把配置上传上去，再下载到新的VSCode中同步
 + 具体操作可参考官方教程，
- + 也可参照大神的bolg [VSCode 同步设置及扩展插件 实现设备上设置统一](https://www.cnblogs.com/kenz520/p/7416836.html)
+  + 也可参照大神的bolg [VSCode 同步设置及扩展插件 实现设备上设置统一](https://www.cnblogs.com/kenz520/p/7416836.html)
 > 如果觉得麻烦，那就对照之前的配置重新来过吧  
 
 记录下我的VSCode的插件  
