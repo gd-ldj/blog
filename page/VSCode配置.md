@@ -10,7 +10,7 @@
   + 也可参照大神的bolg [VSCode 同步设置及扩展插件 实现设备上设置统一](https://www.cnblogs.com/kenz520/p/7416836.html)
 > 如果觉得麻烦，那就对照之前的配置重新来过吧  
 
-记录下我的VSCode的插件  
+记录下我的VSCode的插件，仅供参考  
 
 
 - **Auto Close Tag**      
