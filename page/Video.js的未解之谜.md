@@ -3,7 +3,7 @@
 
 这种情况下，就只有重拾即将淘汰的 flash 方案，作为过渡期 
 
-Video.js 的低于6版本的是有封装 flash 的方案的，确定使用 Video.js 的 flash 方案播放 rtmp 的视频
+Video.js 的低于6版本的是有封装 flash 的方案的，使用 Video.js 的 flash 方案播放 rtmp 的视频
 
 > 开发一切正常，提交测试  
 
