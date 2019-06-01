@@ -1,6 +1,6 @@
 ## 工欲善其事，必先利其器  
 
-### 程序员离不开的是IDE，本人最常用的是Visual Studio Code  :smile:   
+### 程序员离不开的是IDE，本人现阶段最常用的是Visual Studio Code  :smile:   
 
 换了电脑后，对新IDE进行重新配置以及安装插件是非常繁琐的，教你移植VSCode配置的方法
 + 这里使用的是VSCode的同步插件 **"Settings Sync"** 
