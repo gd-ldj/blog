@@ -22,12 +22,11 @@
     width: 100px;
   }
   ```
-  - 文件全局的变量仅次于@import声明， 局部变量在块的头部声明
+ - 文件全局的变量仅次于@import声明， 局部变量在块的头部声明
    ```less
   // bad
   .page {
     width: @width;
-    
     @width： 100px；
   }
   
@@ -35,11 +34,11 @@
   
   .page {
     @width： 100px；
-  
-    width: width;
+    width: @width;
   }
-  ```
-  - 变量命名必须用中划线 - 号连接`@big-width`
+  
+  
+ - 变量命名必须用中划线 - 号连接`@big-width`
     ```less
   // bad
   .page {
