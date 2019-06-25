@@ -16,7 +16,7 @@
   @import "global.less"
   
   // good
-  @import "global.less"
+  `@import` "global.less"
   
   .page {
     width: 100px;
