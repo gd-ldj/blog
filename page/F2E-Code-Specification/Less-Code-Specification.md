@@ -16,7 +16,7 @@
   @import "global.less"
   
   // good
-  `@import` "global.less"
+  @import "global.less"
   
   .page {
     width: 100px;
@@ -31,15 +31,16 @@
   }
   
   // good
-  
   .page {
     @width： 100px；
     width: @width;
   }
+  ```
+  ```
   
   
  - 变量命名必须用中划线 - 号连接`@big-width`
-    ```less
+    ```css
   // bad
   .page {
     @bigWidth： 100px；
