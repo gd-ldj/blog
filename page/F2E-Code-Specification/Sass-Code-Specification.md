@@ -13,11 +13,12 @@
   .page {
     width: 100px;
     @include transition(background 0.5s ease);
+    
     .home {
        width: 10px;    
     }
   }
   ```
-  + 变量名使用中划线`$my-width`
+ + 变量名使用中划线`$my-width`
   
-  + 不要让嵌套选择器的深度超过三层
+ + 不要让嵌套选择器的深度超过三层
