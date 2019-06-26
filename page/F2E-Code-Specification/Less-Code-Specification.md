@@ -24,7 +24,7 @@
   ```
  - 文件全局的变量仅次于@import声明， 局部变量在块的头部声明
    ```les
-  // bad
+  // 
    ```less
    // bad
   .page {
@@ -40,7 +40,9 @@
   ```
   
  - 变量命名必须用中划线 - 号连接`@big-width`
-    ```css
+    ```less
+  // 
+   ```less
   // bad
   .page {
     @bigWidth： 100px；
