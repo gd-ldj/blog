@@ -36,3 +36,4 @@ const Listing = ({ text }) => (
   <div>{text}</div>
 )
 ```
+### PropTypes/DefaultProps
