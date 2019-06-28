@@ -5,3 +5,20 @@
 
 ### 组件
 + 有内部状态，方法或者是要对外暴露的ref组件，使用ES6 Class写法
+```js
+// bad 
+const Listing = React.createClass({
+  // ...
+  render() {
+    return <div>{this.state.text}</div>
+  }
+})
+
+// good
+class Listing extends React.Component {
+// ...
+  render() {
+    return <div>{this.state.text}</div>
+  }
+}
+```
