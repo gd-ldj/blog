@@ -22,3 +22,17 @@ class Listing extends React.Component {
   }
 }
 ```
++ 没有内部状态，方法或者无需对外暴露ref的组件，使用函数的写法
+```js
+// bad 
+class Listing extends React.Component {
+  render() {
+    return <div>{this.state.text}</div>
+  }
+}
+
+// good
+const Listing = ({ text }) => (
+  <div>{text}</div>
+)
+```
