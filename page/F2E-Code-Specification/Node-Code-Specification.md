@@ -1,2 +1,3 @@
 start
  wait
+wait
